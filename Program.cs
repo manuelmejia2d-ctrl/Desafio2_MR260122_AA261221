@@ -17,12 +17,13 @@ namespace Desafio2
                 Console.WriteLine("2. Ejercicio 2: Sistema de Notas");
                 Console.WriteLine("3. Salir");
                 Console.Write("Seleccione una opción: ");
+                
 
                 if (int.TryParse(Console.ReadLine(), out opcion))
                 {
                     switch (opcion)
                     {
-                        case 1: EjercicioAhorcado(); 
+                        case 1: ahorcado.EjercicioAhorcado(); 
                         break;
                         case 2: EjercicioNotas(); 
                         break;
