@@ -13,8 +13,8 @@ namespace Desafio2
                 Console.Clear();
                 Console.WriteLine("--- UNIVERSIDAD DON BOSCO ---");
                 Console.WriteLine("Desafío 2 - Programación de Algoritmos");
-                Console.WriteLine("1. Ejercicio 1: Juego del Ahorcado");
-                Console.WriteLine("2. Ejercicio 2: Sistema de Notas");
+                Console.WriteLine("1.Juego del Ahorcado");
+                Console.WriteLine("2.Sistema de Notas");
                 Console.WriteLine("3. Salir");
                 Console.Write("Seleccione una opción: ");
                 

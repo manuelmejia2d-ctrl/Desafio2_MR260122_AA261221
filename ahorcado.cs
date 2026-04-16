@@ -24,8 +24,16 @@ namespace Desafio2
                         JugarAhorcado();
                         break;
                     case "2":
-                        Console.WriteLine("\nInstrucciones: Adivina la palabra letra por letra.");
-                        Console.WriteLine("Tienes 6 intentos. ¡Suerte!");
+                        Console.WriteLine("\n*** INSTRUCCIONES ***");
+                        Console.WriteLine("- El juego elige una palabra al azar y debes adivinarla letra por letra.");
+                        Console.WriteLine("- Verás la palabra oculta con guiones bajos y se irá revelando si aciertas.");
+                        Console.WriteLine("- Solo puedes ingresar una letra a la vez.");
+                        Console.WriteLine("- Si repites una letra ya usada, no contará.");
+                        Console.WriteLine("- Tienes 6 intentos antes de perder la partida.");
+                        Console.WriteLine("- Cada error va formando el dibujo del ahorcado.");
+                        Console.WriteLine("- Si completas la palabra antes de los 6 intentos, ganas.");
+                        Console.WriteLine("- Si pierdes, se muestra la palabra correcta.");
+                        Console.WriteLine("- Al final puedes jugar otra vez o volver al menú.");
                         Console.WriteLine("\nPresione cualquier tecla para volver...");
                         Console.ReadKey();
                         break;
@@ -116,8 +124,30 @@ namespace Desafio2
             }
 
             Console.ResetColor();
-            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
-            Console.ReadKey();
+            bool salirMenu = false;
+            while (!salirMenu)
+            {
+                Console.WriteLine("\n¿Desea jugar de nuevo?");
+                Console.WriteLine("1. Sí");
+                Console.WriteLine("2. No (volver al menú)");
+                Console.Write("Opción: ");
+
+            string opcion = Console.ReadLine();
+
+            switch (opcion)
+            {
+            case "1":
+                JugarAhorcado();
+            return;
+            case "2":
+                salirMenu = true;
+            break;
+            default:
+                Console.WriteLine("Opción inválida");
+            break;
+            }
+            }
+                Console.ReadKey();
         }
 
         static void DibujarMuñeco(int errores)
