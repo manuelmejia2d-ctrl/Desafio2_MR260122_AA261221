@@ -24,8 +24,8 @@ namespace Desafio2
                         JugarAhorcado();
                         break;
                     case "2":
-                        Console.WriteLine("\nInstrucciones: Adivina la palabra secreta letra por letra.");
-                        Console.WriteLine("Tienes 6 intentos antes de ser ahorcado. ¡Suerte!");
+                        Console.WriteLine("\nInstrucciones: Adivina la palabra letra por letra.");
+                        Console.WriteLine("Tienes 6 intentos. ¡Suerte!");
                         Console.WriteLine("\nPresione cualquier tecla para volver...");
                         Console.ReadKey();
                         break;
@@ -44,7 +44,7 @@ namespace Desafio2
         {
             string[] bancoPalabras = { "PROGRAMACION", "ALGORITMO", "ESTRUCTURA", "VARIABLE", "COMPUTADORA", "INGENIERIA", "SERVIDOR", "BINARIO", "SISTEMA", "VECTOR" };
             Random aleatorio = new Random();
-            string palabraSecreta = bancoPalabras[aleatorio.Next(0, 10)];
+            string palabraSecreta = bancoPalabras[aleatorio.Next(0, bancoPalabras.Length)];
 
             char[] letrasAdivinadas = new char[palabraSecreta.Length];
             for (int i = 0; i < letrasAdivinadas.Length; i++) letrasAdivinadas[i] = '_';
@@ -56,28 +56,28 @@ namespace Desafio2
             while (intentosFallidos < 6 && !victoria)
             {
                 Console.Clear();
-                //dibujar ahorcado
-                
+                // AQUI SE MUESTRA EL AHORCADO 
+                DibujarMuñeco(intentosFallidos); 
+
                 Console.WriteLine("\nPalabra: " + string.Join(" ", letrasAdivinadas));
                 Console.WriteLine("Letras usadas: " + string.Join(", ", letrasUsadas));
-                Console.WriteLine($"Intentos restantes: {6 - intentosFallidos}");
+                Console.WriteLine("Intentos fallidos: " + intentosFallidos + " / 6");
 
                 Console.Write("\nIngrese una letra: ");
                 string input = Console.ReadLine().ToUpper();
 
                 if (string.IsNullOrEmpty(input) || input.Length > 1 || !char.IsLetter(input[0]))
                 {
-                    Console.WriteLine("Error: Ingrese un solo carácter válido.");
-                    Thread.Sleep(1000);
+                    Console.WriteLine("Error: Ingrese una letra válida.");
+                    Thread.Sleep(800);
                     continue;
                 }
 
                 char letra = input[0];
-
                 if (letrasUsadas.Contains(letra))
                 {
-                    Console.WriteLine($"La letra '{letra}' ya la usaste.");
-                    Thread.Sleep(1000);
+                    Console.WriteLine("Ya usaste la letra " + letra);
+                    Thread.Sleep(800);
                     continue;
                 }
 
@@ -94,8 +94,51 @@ namespace Desafio2
                 {
                     intentosFallidos++;
                 }
+
                 victoria = !new string(letrasAdivinadas).Contains('_');
             }
+
+            // AQUI APARECE LA PANTALLA FINAL
+            Console.Clear();
+            DibujarMuñeco(intentosFallidos);
+
+            if (victoria)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\n¡FELICIDADES! Ganaste.");
+                Console.WriteLine("La palabra era: " + palabraSecreta);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("\n¡PERDISTE!");
+                Console.WriteLine("La palabra secreta era: " + palabraSecreta);
+            }
+
+            Console.ResetColor();
+            Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+            Console.ReadKey();
+        }
+
+        static void DibujarMuñeco(int errores)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("  +---+");
+            Console.WriteLine("  |   |");
+            Console.WriteLine("  {0}   |", (errores >= 1 ? "O" : " "));
+            
+            if (errores == 2) Console.WriteLine("  |   |");
+            else if (errores == 3) Console.WriteLine(" /|   |");
+            else if (errores >= 4) Console.WriteLine(" /|\\  |");
+            else Console.WriteLine("      |");
+
+            if (errores == 5) Console.WriteLine(" /    |");
+            else if (errores >= 6) Console.WriteLine(" / \\  |");
+            else Console.WriteLine("      |");
+
+            Console.WriteLine("      |");
+            Console.WriteLine("=========");
+            Console.ResetColor();
         }
     }
 }
