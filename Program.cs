@@ -25,7 +25,7 @@ namespace Desafio2
                     {
                         case 1: ahorcado.EjercicioAhorcado(); 
                         break;
-                        case 2: EjercicioNotas(); 
+                        case 2: notas.EjercicioNotas(); 
                         break;
                         case 3: Console.WriteLine("Saliendo..."); 
                         break;
