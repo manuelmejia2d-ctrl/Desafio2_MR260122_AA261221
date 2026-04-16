@@ -8,19 +8,24 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\ja615\\.nuget\\packages\\": {}
+    "C:\\Users\\manue\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ja615\\OneDrive\\Documentos\\VISUAL STUDIO\\PAL404_LABORATORIOS\\Desafios_Practicos\\Desafio2\\Desafio2.csproj",
+      "projectUniqueName": "C:\\Users\\manue\\Desafio2_MR260122_AA261221\\Desafio2.csproj",
       "projectName": "Desafio2",
-      "projectPath": "C:\\Users\\ja615\\OneDrive\\Documentos\\VISUAL STUDIO\\PAL404_LABORATORIOS\\Desafios_Practicos\\Desafio2\\Desafio2.csproj",
-      "packagesPath": "C:\\Users\\ja615\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ja615\\OneDrive\\Documentos\\VISUAL STUDIO\\PAL404_LABORATORIOS\\Desafios_Practicos\\Desafio2\\obj\\",
+      "projectPath": "C:\\Users\\manue\\Desafio2_MR260122_AA261221\\Desafio2.csproj",
+      "packagesPath": "C:\\Users\\manue\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\manue\\Desafio2_MR260122_AA261221\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\ja615\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\manue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -46,7 +51,7 @@
         "auditLevel": "low",
         "auditMode": "all"
       },
-      "SdkAnalysisLevel": "10.0.200"
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net10.0": {
@@ -67,7 +72,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

@@ -10,7 +10,7 @@ namespace Desafio2
             bool continuar = true;
             while (continuar)
             {
-                
+                Console.Clear();
                 Console.WriteLine("--- JUEGO DEL AHORCADO ---");
                 Console.WriteLine("1. Jugar");
                 Console.WriteLine("2. Ver Instrucciones");
