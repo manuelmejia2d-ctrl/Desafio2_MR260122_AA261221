@@ -56,6 +56,59 @@ namespace Desafio2
         }
 
         double promedio = suma / n;
-    }  
-   }    
-   }
+        
+        //TABLA DE REPORTE 
+        int aprobados = 0;
+        int reprobados = 0;
+
+        // Encabezado con bordes pro
+        Console.WriteLine("\n┌──────────────────────┬──────────┬────────┬────────────┐");
+        Console.WriteLine("│ {0,-20} │ {1,-8} │ {2,-6} │ {3,-10} │", "NOMBRE", "NOTA", "LETRA", "ESTADO");
+        Console.WriteLine("├──────────────────────┼──────────┼────────┼────────────┤");
+
+        for (int i = 0; i < n; i++)
+        {
+            string letra = ObtenerLetra(notas[i]);
+            string estado = Estado(notas[i]);
+
+            if (estado == "Aprobado")
+                aprobados++;
+            else
+                reprobados++;
+
+            string nombreFijo = nombres[i].Length > 20 ? nombres[i].Substring(0, 17) + "..." : nombres[i].PadRight(20);
+            Console.WriteLine("│ {0,-20} │ {1,-8:F2} │ {2,-6} │ {3,-10} │", nombreFijo, notas[i], letra, estado);
+        }
+
+        Console.WriteLine("└──────────────────────┴──────────┴────────┴────────────┘");
+
+        //RESUMEN FINAL
+        Console.WriteLine("==============================================");
+        Console.WriteLine("Promedio general: " + promedio.ToString("F2"));
+        Console.WriteLine("Nota máxima: " + max);
+        Console.WriteLine("Nota mínima: " + min);
+        Console.WriteLine("Total aprobados: " + aprobados);
+        Console.WriteLine("Total reprobados: " + reprobados);
+        Console.WriteLine("==============================================");
+    }
+
+      //FUNCIONES
+         static string ObtenerLetra(double nota)
+    {
+        if (nota >= 9) return "A";
+        if (nota >= 8) return "B";
+        if (nota >= 7) return "C";
+        if (nota >= 6) return "D";
+        return "F";
+    }
+
+        static string Estado(double nota)
+    {
+        if (nota >= 6) return "Aprobado";
+        return "Reprobado";
+    }
+}
+    
+}  
+       
+   
