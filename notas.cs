@@ -7,18 +7,20 @@ namespace Desafio2
 {
     public static void EjercicioNotas()
     {
-        Console.WindowHeight = 125;
-        Console.WindowWidth = 90;
-        Console.ForegroundColor=ConsoleColor.Yellow;
-        Console.BackgroundColor=ConsoleColor.Blue;
+        Console.WindowHeight = 200;
+        Console.WindowWidth = 70;
+        Console.ForegroundColor=ConsoleColor.Black;
+        Console.BackgroundColor=ConsoleColor.DarkGray;
         Console.Clear();
         //ESTRUCTURA BASE
         Console.Clear();
         Console.ForegroundColor=ConsoleColor.White;
-        Console.Write("\t\n********** BIENVENIDO AL SISTEMA DE NOTAS **********");
-        Console.ForegroundColor=ConsoleColor.Yellow;
+        Console.BackgroundColor=ConsoleColor.Blue;
+        Console.Write("\n***************** BIENVENIDO AL SISTEMA DE NOTAS *********************");
+        Console.ForegroundColor=ConsoleColor.Black;
+        Console.BackgroundColor=ConsoleColor.DarkGray;
         Console.Write("\n\n");
-        Console.Write(" Ingrese la cantidad de estudiantes: ");
+        Console.Write("Ingrese la cantidad de estudiantes: ");
         int n = int.Parse(Console.ReadLine());
         
         string[] nombres = new string[n];
@@ -39,8 +41,7 @@ namespace Desafio2
                 string input = Console.ReadLine();
 
                 if (double.TryParse(input, out nota) && nota >= 0 && nota <= 10)
-                    break;
-                Console.ForegroundColor=ConsoleColor.Red    
+                    break;   
                 Console.WriteLine("Por favor, solo ingrese numeros.");
             }
 
@@ -91,13 +92,13 @@ namespace Desafio2
         Console.WriteLine("└──────────────────────┴──────────┴────────┴────────────┘");
 
         //RESUMEN FINAL
-        Console.WriteLine("==============================================");
-        Console.WriteLine("Promedio general: " + promedio.ToString("F2"));
-        Console.WriteLine("Nota máxima: " + max);
-        Console.WriteLine("Nota mínima: " + min);
-        Console.WriteLine("Total aprobados: " + aprobados);
-        Console.WriteLine("Total reprobados: " + reprobados);
-        Console.WriteLine("==============================================");
+        Console.WriteLine("  ==============================================");
+        Console.WriteLine("    Promedio general: " + promedio.ToString("F2"));
+        Console.WriteLine("    Nota máxima: " + max);
+        Console.WriteLine("    Nota mínima: " + min);
+        Console.WriteLine("    Total aprobados: " + aprobados);
+        Console.WriteLine("    Total reprobados: " + reprobados);
+        Console.WriteLine("  ==============================================");
     }
 
       //FUNCIONES
