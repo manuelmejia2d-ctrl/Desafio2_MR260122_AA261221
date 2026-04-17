@@ -6,15 +6,23 @@ namespace Desafio2
     public class ahorcado
     {
         public static void EjercicioAhorcado()
-        {
+        {    
+
+             Console.WindowHeight = 30;
+             Console.WindowWidth = 60;
+             Console.ForegroundColor=ConsoleColor.White;
+             Console.BackgroundColor=ConsoleColor.DarkGray;
+
+             Console.Clear();
+
             bool continuar = true;
             while (continuar)
             {
                 Console.Clear();
-                Console.WriteLine("--- JUEGO DEL AHORCADO ---");
-                Console.WriteLine("1. Jugar");
-                Console.WriteLine("2. Ver Instrucciones");
-                Console.WriteLine("3. Salir");
+                Console.WriteLine("\n    --- JUEGO DEL AHORCADO ---");
+                Console.WriteLine("    1. Jugar");
+                Console.WriteLine("    2. Ver Instrucciones");
+                Console.WriteLine("    3. Salir");
                 Console.Write("Seleccione una opción: ");
                 string opcion = Console.ReadLine();
 
@@ -63,8 +71,11 @@ namespace Desafio2
 
             while (intentosFallidos < 6 && !victoria)
             {
-                Console.Clear();
                 // AQUI SE MUESTRA EL AHORCADO 
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.Clear();
+
                 DibujarMuñeco(intentosFallidos); 
 
                 Console.WriteLine("\nPalabra: " + string.Join(" ", letrasAdivinadas));
@@ -107,7 +118,10 @@ namespace Desafio2
             }
 
             // AQUI APARECE LA PANTALLA FINAL
-            Console.Clear();
+            Console.BackgroundColor = ConsoleColor.DarkGray;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear(); 
+
             DibujarMuñeco(intentosFallidos);
 
             if (victoria)
@@ -122,30 +136,33 @@ namespace Desafio2
                 Console.WriteLine("\n¡PERDISTE!");
                 Console.WriteLine("La palabra secreta era: " + palabraSecreta);
             }
+                Console.ForegroundColor = ConsoleColor.White;
 
-            Console.ResetColor();
-            bool salirMenu = false;
-            while (!salirMenu)
+              
+                bool salirMenu = false;
+                while (!salirMenu)
             {
                 Console.WriteLine("\n¿Desea jugar de nuevo?");
                 Console.WriteLine("1. Sí");
                 Console.WriteLine("2. No (volver al menú)");
                 Console.Write("Opción: ");
 
-            string opcion = Console.ReadLine();
+                string opcion = Console.ReadLine();
 
-            switch (opcion)
-            {
-            case "1":
+                switch (opcion)
+             {
+                case "1":
+                Console.BackgroundColor = ConsoleColor.DarkGray;
+                Console.Clear();
                 JugarAhorcado();
-            return;
-            case "2":
+                return;
+                case "2":
                 salirMenu = true;
-            break;
-            default:
+                break;
+                default:
                 Console.WriteLine("Opción inválida");
-            break;
-            }
+                break;
+             }
             }
                 Console.ReadKey();
         }
@@ -168,7 +185,6 @@ namespace Desafio2
 
             Console.WriteLine("      |");
             Console.WriteLine("=========");
-            Console.ResetColor();
         }
     }
 }
