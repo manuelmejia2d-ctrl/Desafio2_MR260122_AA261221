@@ -8,7 +8,7 @@ namespace Desafio2
         public static void EjercicioAhorcado()
         {    
 
-             Console.WindowHeight = 30;
+             Console.WindowHeight = 80;
              Console.WindowWidth = 60;
              Console.ForegroundColor=ConsoleColor.White;
              Console.BackgroundColor=ConsoleColor.DarkGray;
@@ -32,23 +32,21 @@ namespace Desafio2
                         JugarAhorcado();
                         break;
                     case "2":
-                        Console.WriteLine("\n*** INSTRUCCIONES ***");
-                        Console.WriteLine("- El juego elige una palabra al azar y debes adivinarla letra por letra.");
-                        Console.WriteLine("- Verás la palabra oculta con guiones bajos y se irá revelando si aciertas.");
-                        Console.WriteLine("- Solo puedes ingresar una letra a la vez.");
-                        Console.WriteLine("- Si repites una letra ya usada, no contará.");
-                        Console.WriteLine("- Tienes 6 intentos antes de perder la partida.");
-                        Console.WriteLine("- Cada error va formando el dibujo del ahorcado.");
-                        Console.WriteLine("- Si completas la palabra antes de los 6 intentos, ganas.");
-                        Console.WriteLine("- Si pierdes, se muestra la palabra correcta.");
-                        Console.WriteLine("- Al final puedes jugar otra vez o volver al menú.");
-                        Console.WriteLine("\nPresione cualquier tecla para volver...");
+                        Console.WriteLine("\n          *** INSTRUCCIONES DEL JUEGO ***");
+                        Console.WriteLine("    ***************************************************\n");
+                        Console.WriteLine("    - El sistema elige una palabra al azar.");
+                        Console.WriteLine("    - Debes adivinar la palabra letra por letra.");
+                        Console.WriteLine("    - Si fallas, el dibujo del ahorcado crecerá.");
+                        Console.WriteLine("    - Tienes un máximo de 6 intentos fallidos.");
+                        Console.WriteLine("    - Si completas la palabra antes de morir, ¡GANAS!");
+                        Console.WriteLine("    ***************************************************\n");
+                        Console.WriteLine("          Presione cualquier tecla para volver...");
                         Console.ReadKey();
                         break;
-                    case "3":
+                         case "3":
                         continuar = false;
                         break;
-                    default:
+                          default:
                         Console.WriteLine("Opción no válida.");
                         Thread.Sleep(1000);
                         break;
