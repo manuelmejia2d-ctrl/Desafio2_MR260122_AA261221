@@ -7,13 +7,19 @@ namespace Desafio2
 {
     public static void EjercicioNotas()
     {
+        Console.WindowHeight = 70;
+        Console.WindowWidth = 60;
+        Console.ForegroundColor=ConsoleColor.Black;
+        Console.BackgroundColor=ConsoleColor.DarkYellow;
+        Console.Clear();
         //ESTRUCTURA BASE
         Console.Clear();
-        Console.Write("\n******BIENVENIDO AL SISTEMA DE NOTAS******");
-        Console.Write("\n");
+        Console.Write("\t\n********** BIENVENIDO AL SISTEMA DE NOTAS **********");
+        Console.Write("\n\n");
         Console.Write("Ingrese la cantidad de estudiantes: ");
         int n = int.Parse(Console.ReadLine());
-
+        
+        Console.Write("\n");
         string[] nombres = new string[n];
         double[] notas = new double[n];
         // proceso de ingreso y validacion
@@ -21,19 +27,19 @@ namespace Desafio2
         {
             Console.WriteLine($"\nEstudiante {i + 1}");
 
-            Console.Write("Nombre: ");
+            Console.Write("\tNombre: ");
             nombres[i] = Console.ReadLine();
 
             double nota;
 
             while (true)
             {
-                Console.Write("Nota (0 - 10): ");
+                Console.Write("\tNota (0 - 10): ");
                 string input = Console.ReadLine();
 
                 if (double.TryParse(input, out nota) && nota >= 0 && nota <= 10)
                     break;
-
+                Console.ForegroundColor=ConsoleColor.Red
                 Console.WriteLine("Por favor, solo ingrese numeros.");
             }
 
@@ -61,6 +67,7 @@ namespace Desafio2
         int aprobados = 0;
         int reprobados = 0;
 
+        Console.Write("\n\n");
         // Encabezado con bordes pro
         Console.WriteLine("\n┌──────────────────────┬──────────┬────────┬────────────┐");
         Console.WriteLine("│ {0,-20} │ {1,-8} │ {2,-6} │ {3,-10} │", "NOMBRE", "NOTA", "LETRA", "ESTADO");
