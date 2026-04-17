@@ -7,19 +7,20 @@ namespace Desafio2
 {
     public static void EjercicioNotas()
     {
-        Console.WindowHeight = 70;
-        Console.WindowWidth = 60;
-        Console.ForegroundColor=ConsoleColor.Black;
-        Console.BackgroundColor=ConsoleColor.DarkYellow;
+        Console.WindowHeight = 125;
+        Console.WindowWidth = 90;
+        Console.ForegroundColor=ConsoleColor.Yellow;
+        Console.BackgroundColor=ConsoleColor.Blue;
         Console.Clear();
         //ESTRUCTURA BASE
         Console.Clear();
+        Console.ForegroundColor=ConsoleColor.White;
         Console.Write("\t\n********** BIENVENIDO AL SISTEMA DE NOTAS **********");
+        Console.ForegroundColor=ConsoleColor.Yellow;
         Console.Write("\n\n");
-        Console.Write("Ingrese la cantidad de estudiantes: ");
+        Console.Write(" Ingrese la cantidad de estudiantes: ");
         int n = int.Parse(Console.ReadLine());
         
-        Console.Write("\n");
         string[] nombres = new string[n];
         double[] notas = new double[n];
         // proceso de ingreso y validacion
@@ -27,19 +28,19 @@ namespace Desafio2
         {
             Console.WriteLine($"\nEstudiante {i + 1}");
 
-            Console.Write("\tNombre: ");
+            Console.Write("\t Nombre: ");
             nombres[i] = Console.ReadLine();
 
             double nota;
 
             while (true)
             {
-                Console.Write("\tNota (0 - 10): ");
+                Console.Write("\t Nota (0 - 10): ");
                 string input = Console.ReadLine();
 
                 if (double.TryParse(input, out nota) && nota >= 0 && nota <= 10)
                     break;
-                Console.ForegroundColor=ConsoleColor.Red
+                Console.ForegroundColor=ConsoleColor.Red    
                 Console.WriteLine("Por favor, solo ingrese numeros.");
             }
 
@@ -66,7 +67,7 @@ namespace Desafio2
         //TABLA DE REPORTE 
         int aprobados = 0;
         int reprobados = 0;
-
+        Console.ForegroundColor=ConsoleColor.White;
         Console.Write("\n\n");
         // Encabezado con bordes pro
         Console.WriteLine("\n┌──────────────────────┬──────────┬────────┬────────────┐");
